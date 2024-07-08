@@ -36,6 +36,18 @@ export default function Home() {
 		let rs: string[] = [];
 		d.forEach((e) => {
 			// ladi, lati, ina, ana cases
+			if (e === "وأن" || e === "وإن") {
+				e = e.slice(0, 3) + "\u0651" + e.slice(3);
+				rs.push(e);
+				return
+			}
+			//
+			if (e === "والذي" || e === "والتي") {
+				e = e.slice(0, 3) + "\u0651" + e.slice(3);
+				rs.push(e);
+				return
+			}
+
 			if (e === "الذي" || e === "التي" || e === "إن" || e === "أن") {
 				e = e.slice(0, 2) + "\u0651" + e.slice(2);
 				rs.push(e);
